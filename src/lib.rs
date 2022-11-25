@@ -1,5 +1,5 @@
-use std::path::Path;
 use std::fs::read;
+use std::path::Path;
 
 use process::ImageProcessor;
 
@@ -17,7 +17,10 @@ impl Parser {
         }
     }
 
-    pub fn parse_from_file<P: AsRef<Path>>(&self, path: P) -> Result<String, Box<dyn std::error::Error>> {
+    pub fn parse_from_file<P: AsRef<Path>>(
+        &self,
+        path: P,
+    ) -> Result<String, Box<dyn std::error::Error>> {
         let byte_array: Vec<u8> = read(path)?;
         self.processor.process(&byte_array)
     }
@@ -27,7 +30,10 @@ impl Parser {
         self.processor.process(&byte_array)
     }
 
-    pub fn parse_from_bytes(&self, byte_array: &Vec<u8>) -> Result<String, Box<dyn std::error::Error>> {
+    pub fn parse_from_bytes(
+        &self,
+        byte_array: &Vec<u8>,
+    ) -> Result<String, Box<dyn std::error::Error>> {
         self.processor.process(&byte_array)
     }
 }

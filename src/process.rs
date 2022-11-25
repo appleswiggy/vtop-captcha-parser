@@ -8,7 +8,7 @@ use crate::weights::DATA;
 
 const HEIGHT: usize = 40;
 const WIDTH: usize = 200;
-const CAPTCHA_CHARS: &str = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; 
+const CAPTCHA_CHARS: &str = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
 pub struct ImageProcessor {
     weights: Vec<Vec<f64>>,
